@@ -58,21 +58,30 @@ and enable your authentication provider for email/password
 
 
 
-## After the application is deployed in firebase the user will be redirected to:
+## App flows
+
+You will be immediately prompted to login
 
 
 ![](images/login-page.png)
 
+In order to create an account the user must first signup
+
 
 ![](images/signup.png)
 
+After the signup the user can login with the newly created credentials
 
 ![](images/login.png)
 
+After the user is authenticated the search page is the default page displayed to the user
 
 ![](images/search.png)
 
+if the user decides to follow and thicks the box to follow some stocks that are found in the search they will be visible in the follow stocks tab
 ![](images/follow.png)
+
+If the user want to end his session he can click logout on the top right corner
 
 ![](images/logout.png)
 
