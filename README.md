@@ -59,6 +59,7 @@ and enable your authentication provider for email/password
 
 
 ## After the application is deployed in firebase the user will be redirected to:
-<img src="https://github.com/gpais/stock-app/tree/main/src/images/login-page.png" width="250"> |
-`
+
+
+![](images/login-page.png)
 
