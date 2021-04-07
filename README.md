@@ -1,4 +1,4 @@
-# stock tracker
+# FitnessTracker
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
 
@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Project setup
+
+1) Before run the project you must first create your firebase account
+
+2) After the firebase project is created go to:
+https://console.firebase.google.com/project/<my project>authentication/providers 
+and enable your authentication provider for email/password
+
+3) Go to the page: https://console.firebase.google.com/u/0/project/<my project>/overview and add a new app
+
+4) Go to the project settings and copy your app keys config
+
+5) replace the keys on the files envirionment.ts and envirionment.prod.ts
+
+6) run npm install
+
+7) run npm start and the application should be served on the port http://localhost:4200/
+
