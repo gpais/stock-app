@@ -1,0 +1,54 @@
+<div fxLayoutAlign="center center">
+  <mat-form-field fxFlex="40%">
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="search">
+  </mat-form-field>
+</div>
+<mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="symbol">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Symbol</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.symbol }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>name</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="companyType">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>companyType</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.companyType }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="close">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>close</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.close | number }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="volume">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>volume</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.volume | number  }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>price</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.price| number  }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="change">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>change</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.change | number }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="change_percent">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>change_percent</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.change_percent  }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="latest_trading_day">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>latest_trading_day</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.latest_trading_day  }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="followed_stock">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>followed_stock</mat-header-cell>
+    <mat-cell *matCellDef="let element" style="overflow: unset;">
+      <mat-checkbox [(ngModel)]="element.followed_stock" (change)="follow(element)"></mat-checkbox>
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator [pageSize]="5" [pageSizeOptions]="[ 5, 10, 20]">
+</mat-paginator>

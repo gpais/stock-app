@@ -1,0 +1,35 @@
+<div fxLayoutAlign="center center" *ngIf="expandedElement && expandedElement.expanded">
+  <stock-chart  [symbol]="expandedElement.symbol"></stock-chart>
+</div>
+<div fxLayoutAlign="center center">
+
+  <mat-form-field fxFlex="40%">
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+<mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="symbol">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Symbol</mat-header-cell>
+    <mat-cell *matCellDef="let element;let row" (click)="expandElement(element)" >{{ element.symbol }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="company">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>company</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.company }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="followed_stock">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>followed_stock</mat-header-cell>
+    <mat-cell *matCellDef="let element" style="overflow: unset;">
+      <mat-checkbox [(ngModel)]="element.followed" (change)="unfollow(element)"></mat-checkbox>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="expandedDetail">
+    <mat-cell *matCellDef="let element">
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;let element;"  ></mat-row>
+</mat-table>
+
+<mat-paginator [pageSize]="5" [pageSizeOptions]="[ 5, 10, 20]">
+</mat-paginator>
