@@ -57,3 +57,8 @@ and enable your authentication provider for email/password
 2) follow the instructions provided in the following page https://firebase.google.com/docs/hosting/quickstart
 
 
+
+## After the application is deployed in firebase the user will be redirected to:
+<img src="https://github.com/gpais/stock-app/tree/main/src/images/login-page.png" width="250"> |
+`
+
