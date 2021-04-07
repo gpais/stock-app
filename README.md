@@ -40,7 +40,20 @@ and enable your authentication provider for email/password
 
 5) replace the keys on the files envirionment.ts and envirionment.prod.ts
 
-6) run npm install
+6) go to https://www.alphavantage.co/ and create your key 
 
-7) run npm start and the application should be served on the port http://localhost:4200/
+7) replace the   alpha_advantage_api_key in envirionment and envirionment.prod.ts
+
+8) run npm install
+
+9) run npm start and the application should be served on the port http://localhost:4200/
+
+
+
+## deploy the project in firebase
+
+1) run ng build --prod
+
+2) follow the instructions provided in the following page https://firebase.google.com/docs/hosting/quickstart
+
 
